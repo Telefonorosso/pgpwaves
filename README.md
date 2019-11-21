@@ -1,9 +1,5 @@
 # pgpwaves
-Send PGP encrypted stuff via sound waves, is based on the excellent
-
-http://www.whence.com/minimodem/
-
-By Kamal Mostafa.
+Send PGP encrypted stuff via sound waves, based on the excellent http://www.whence.com/minimodem/ By Kamal Mostafa.
 
 ## Prerequisites
 - Linux
@@ -32,7 +28,7 @@ $ ./configure --without-pulseaudio
 $ make && make install
 ```
 
-## How to use
+## About
 - The idea is to establish a duplex audio path between two machines in order to securely send a text file from A to B.
 - You may connect two PC's via audio cables (audio out --> mic in | and vice-versa)
 - You may establish a VOIP call (preferred codec: u-law)
@@ -43,7 +39,7 @@ $ make && make install
 ## Syntax
 `./pgpwaves.sh [-f, --file FILENAME] [-p, --passphrase PASSPHRASE] [-r, --rate BAUD]`
 
-## Example
+# Example
 - Establish the audio path first
 - Check volumes with `alsamixer`
 

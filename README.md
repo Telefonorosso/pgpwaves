@@ -1,7 +1,5 @@
 # pgpwaves
-Send PGP encrypted stuff via sound waves
-
-This is based on the excellent
+Send PGP encrypted stuff via sound waves, is based on the excellent
 
 http://www.whence.com/minimodem/
 

@@ -97,5 +97,7 @@ RX: The audio is captured and FSK decoded; the "----" sync message is stripped; 
 - I'm not a crypto guy, I'm not implying this is totally secure, I'm here to discuss and learn so ANY COMMENT, EVEN THE ONES SUGGESTING THAT THIS SOLUTION IS ABSOLUT BULLSHIT WILL BE WELCOME.
 - I'd like to build a small device that acts as a Bluetooth handset pairing with your phone and send/receive audio via BT. Would that compromise security?
 
-Thank you very much,
-Telefonorosso
+
+## Video demonstraion
+Demo'ing a very basic version of the script
+https://drive.google.com/file/d/1_NUTUPkv1Z3cLVUW-j4tWaAW7Rwx3P6I/view

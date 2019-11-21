@@ -74,11 +74,15 @@ Prepare a text file to be sent:
 The interesting lines in the scripts are this ones:
 
 - Sending end:
+
 `echo "$line" | gpg -c --batch --passphrase $2 -o - | base64 -w0 | awk '{printf "----"$1}' | minimodem --alsa=plughw:0,0 --tx $3`
+
 - Receiving end:
+
 `minimodem -q --alsa=plughw:0,0 --sync-byte 0x2D --rx-one --print-filter --rx $2 | base64 -d | gpg -q --decrypt --batch --yes --passphrase $1 -`
 
 TX: The line is parsed; is encrypted with PGP with the supplied passphrase; is base64 encoded; is prepended with "----" to sync the receiving end; is FSK encoded and sent as audio signal.
+
 RX: The audio is captured and FSK decoded; the "----" sync message is stripped; is base64 decoded; is decrypted with PGP with the supplied passphrase.
 
 ## Security considerations

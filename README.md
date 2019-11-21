@@ -84,7 +84,7 @@ The interesting lines in the scripts are this ones:
 
 TX: The line is parsed; is encrypted with PGP with the supplied passphrase; is base64 encoded; is prepended with "----" to sync the receiving end; is FSK encoded and sent as audio signal.
 
-RX: The audio is captured and FSK decoded; the "----" sync message is stripped; is base64 decoded; is decrypted with PGP with the supplied passphrase.
+RX: The audio is captured and FSK decoded; the "----" sync prefix is stripped; is base64 decoded; is decrypted with PGP with the supplied passphrase.
 
 *NOTE: VIRTUALLY ANY TRANSMISSION ERROR WILL RESULT IN BASE64 BEING UNABLE TO DECODE AND PGP DECRYPTING FAILURE. DIRECT AUDIO LINK WITH CABLE WILL GIVE YOU 100% SUCCESS RATE, EVEN AT LOW VOLUMES. BUT WHAT WILL BE THE POINT OF SENDING ENCRYPTED MESSAGES AT 2 METERS DISTANCE? AUDIO DISTORTION (SENT TOO HIGH, LINE IN TOO SENSITIVE) WILL BREAK COMMUNICATION. I'VE MANAGED TO GET 80% SUCCESS RATE WITH A VOIP AUDIO PATH USING THE U-LAW CODEC. FOR SOME REASON, 1.200 BAUD GIVES BEST RESULTS AND IT'S NOT INTOLERABLY SLOW.* 
 

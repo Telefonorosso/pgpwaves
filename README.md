@@ -98,7 +98,7 @@ RX: The audio is captured and FSK decoded; the "----" sync message is stripped; 
 - I'd like to build a small device that acts as a Bluetooth handset pairing with your phone and send/receive audio via BT. Would that compromise security?
 
 
-## Video demonstraion
+## Video demo
 Demo'ing a very basic version of the script and VOIP setup:
 
 https://drive.google.com/file/d/1_NUTUPkv1Z3cLVUW-j4tWaAW7Rwx3P6I/view

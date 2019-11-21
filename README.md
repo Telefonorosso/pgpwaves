@@ -1,13 +1,17 @@
 # pgpwaves
 Send PGP encrypted stuff via sound waves, based on the excellent http://www.whence.com/minimodem/ By Kamal Mostafa.
 
+
 ## Prerequisites
 - Linux
 - Alsa
 - Minimodem
+- A decent quality duplex audio communication between both parties
+
 
 ## Minimodem install on Ubuntu
 `$ apt-get install minimodem`
+
 
 ## Minimodem build on Centos 7
 ```
@@ -36,8 +40,10 @@ $ make && make install
 - You may use telephone landline
 - You may use cellular or Whatsapp call
 
+
 ## Syntax
 `./pgpwaves.sh [-f, --file FILENAME] [-p, --passphrase PASSPHRASE] [-r, --rate BAUD]`
+
 
 # Example
 - Establish the audio path first
@@ -64,6 +70,7 @@ Prepare a text file to be sent:
 - After 20 seconds of inactivity, TX party is cosidered dead
 - A final sha256sum is made to check integrity
 
+
 ## Theory of operation
 The interesting lines in the scripts are this ones:
 
@@ -78,6 +85,9 @@ The interesting lines in the scripts are this ones:
 TX: The line is parsed; is encrypted with PGP with the supplied passphrase; is base64 encoded; is prepended with "----" to sync the receiving end; is FSK encoded and sent as audio signal.
 
 RX: The audio is captured and FSK decoded; the "----" sync message is stripped; is base64 decoded; is decrypted with PGP with the supplied passphrase.
+
+NOTE: VIRTUALLY ANY TRANSMISSION ERROR WILL RESULT IN BASE64 BEING UNABLE TO DECODE AND PGP DECRYPTING FAILURE. DIRECT AUDIO LINK WITH CABLE WILL GIVE YOU 100% SUCCESS RATE, EVEN AT LOW VOLUMES. AUDIO DISTORTION (SENT TOO HIGH, LINE IN TOO SENSITIVE) WILL BREAK COMMUNICATION. I'VE MANAGED TO GET 80% SUCCESS WITH A VOIP AUDIO PATH USING THE U-LAW CODEC. 
+
 
 ## Security considerations
 - Sender and receiver stations should be airgapped to render any bugging ineffective (eg: software keylogger).

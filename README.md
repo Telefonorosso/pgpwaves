@@ -66,8 +66,8 @@ Prepare a text file to be sent:
 - The script waits for remote party to be ready
 - Cyphertext is sent line by line
 - CTRL+C will stop transmission / reception
-- After 5 retransmissions of the same line, RX party is cosidered dead
-- After 20 seconds of inactivity, TX party is cosidered dead
+- After 5 retransmissions of the same line, RX party is considered dead
+- After 20 seconds of inactivity, TX party is considered dead
 - A final sha256sum is made to check integrity
 
 

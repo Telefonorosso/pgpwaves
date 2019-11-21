@@ -78,13 +78,13 @@ The interesting lines in the scripts are this ones:
 
 `echo "$line" | gpg -c --batch --passphrase $2 -o - | base64 -w0 | awk '{printf "----"$1}' | minimodem --alsa=plughw:0,0 --tx $3`
 
+The line is parsed | is encrypted with PGP and the supplied passphrase | is base64 encoded | is prepended with "----" to sync the receiving end | is FSK encoded and sent as audio signal.
+
 - Receiving end:
 
 `minimodem -q --alsa=plughw:0,0 --sync-byte 0x2D --rx-one --print-filter --rx $2 | base64 -d | gpg -q --decrypt --batch --yes --passphrase $1 -`
 
-TX: The line is parsed; is encrypted with PGP with the supplied passphrase; is base64 encoded; is prepended with "----" to sync the receiving end; is FSK encoded and sent as audio signal.
-
-RX: The audio is captured and FSK decoded; the "----" sync prefix is stripped; is base64 decoded; is decrypted with PGP with the supplied passphrase.
+The audio is captured and FSK decoded | the "----" sync prefix is stripped | is base64 decoded | is decrypted with PGP and the supplied passphrase.
 
 *NOTE: VIRTUALLY ANY TRANSMISSION ERROR WILL RESULT IN BASE64 BEING UNABLE TO DECODE AND PGP DECRYPTING FAILURE. DIRECT AUDIO LINK WITH CABLE WILL GIVE YOU 100% SUCCESS RATE, EVEN AT LOW VOLUMES. BUT WHAT WILL BE THE POINT OF SENDING ENCRYPTED MESSAGES AT 2 METERS DISTANCE? AUDIO DISTORTION (SENT TOO HIGH, LINE IN TOO SENSITIVE) WILL BREAK COMMUNICATION. I'VE MANAGED TO GET 80% SUCCESS RATE WITH A VOIP AUDIO PATH USING THE U-LAW CODEC. FOR SOME REASON, 1.200 BAUD GIVES BEST RESULTS AND IT'S NOT INTOLERABLY SLOW.* 
 

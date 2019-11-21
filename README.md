@@ -99,5 +99,6 @@ RX: The audio is captured and FSK decoded; the "----" sync message is stripped; 
 
 
 ## Video demonstraion
-Demo'ing a very basic version of the script
+Demo'ing a very basic version of the script and VOIP setup:
+
 https://drive.google.com/file/d/1_NUTUPkv1Z3cLVUW-j4tWaAW7Rwx3P6I/view

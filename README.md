@@ -47,7 +47,7 @@ $ make && make install
 
 ## Example
 - Establish the audio path first
-- Check volumes with alsamixer
+- Check volumes with `alsamixer`
 
 - On the sending end:
 
@@ -65,6 +65,7 @@ Prepare a text file to be sent:
 
 - The script waits for remote party to be ready
 - Cyphertext is sent line by line
+- CTRL+C will stop transmission / reception
 - After 5 retransmissions of the same line, RX party is cosidered dead
 - After 20 seconds of inactivity, TX party is cosidered dead
 - A final sha256sum is made to check integrity
